@@ -1,0 +1,18 @@
+describe('empty spec', () => {
+  it('passes', () => {
+    cy.visit('https://obefib.arriansoft.com')
+    cy.get(':nth-child(5) > a > .info-box > .info-box-content > .info-box-number').click()
+    cy.get(':nth-child(2) > .form-control').get("select").select("SASCIN").invoke("val").should("eq", "SASCIN")
+    cy.get(':nth-child(3) > .form-control').type("2022019310092001")
+    cy.get(':nth-child(4) > .form-control').type("sascinjiayou9")
+    cy.get('.btn').click()
+    cy.get(':nth-child(5) > [href="# "]').click()
+    cy.get('.menu-is-opening > .nav > :nth-child(3) > .nav-link').click()
+    cy.get(':nth-child(1) > [width="8%"] > .AspekBtn').click()
+    cy.get('#AspekForm > .modal-body > .form-group > :nth-child(2) > .input-group > .form-control').type("3.30")
+    cy.get(':nth-child(8) > .input-group > .form-control').type("3.30")
+    cy.get(':nth-child(14) > .input-group > .form-control').type("3.30")
+    cy.get(':nth-child(20) > .input-group > .form-control').type("3.30")
+    cy.get('#AspekForm > .modal-footer > [type="submit"]').click()
+  })
+})
